@@ -1,0 +1,8 @@
+
+PREFIX otl: <https://schema.example.ch/otl/>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX schema: <http://schema.org/>
+
+otl:Stair a owl:Class;
+    schema:describtion "I am a Stair";
+    .

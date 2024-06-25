@@ -1,0 +1,33 @@
+<?xml version='1.0' encoding='utf-8'?>
+<ids xmlns="http://standards.buildingsmart.org/IDS" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://standards.buildingsmart.org/IDS http://standards.buildingsmart.org/IDS/0.9.7/ids.xsd">
+    <info>
+        <title>Stair Riser Count Verification</title>
+        <purpose>Ensure stair riser count is greater than 0</purpose>
+    </info>
+    <specifications>
+        <specification name="Stair NumberOfRiser Check" ifcVersion="IFC2X3" identifier="StairNumberOfRiserMinExclusive">
+            <applicability minOccurs="0" maxOccurs="unbounded">
+                <entity>
+                    <name>
+                        <simpleValue>IFCSTAIR</simpleValue>
+                    </name>
+                </entity>
+            </applicability>
+            <requirements>
+                <property dataType="IFCPOSITIVEINTEGER" cardinality="required" instructions="Ensure the stair has more than 0 risers.">
+                    <propertySet>
+                        <simpleValue>Pset_StairCommon</simpleValue>
+                    </propertySet>
+                    <baseName>
+                        <simpleValue>NumberOfRiser</simpleValue>
+                    </baseName>
+                    <value>
+                        <xs:restriction base="xs:integer">
+                            <xs:minExclusive value="0" fixed="false" />
+                        </xs:restriction>
+                    </value>
+                </property>
+            </requirements>
+        </specification>
+    </specifications>
+</ids>

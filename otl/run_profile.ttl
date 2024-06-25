@@ -1,0 +1,20 @@
+
+PREFIX sh: <http://www.w3.org/ns/shacl#>
+PREFIX otl: <https://schema.example.ch/otl/>
+PREFIX otlb: <https://schema.example.ch/otl/base>
+PREFIX ex: <https://schema.example.ch/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+
+<https://schema.example.ch/profile/run/Stair> a sh:Nodeshape;
+    sh:targetClass otl:Stair;
+    
+    otlb:hasAttribute [
+        sh:path otl:NoisingLength;
+        sh:minCount 1;
+        sh:in ("0 mm" "1 mm" "3 mm");
+    ], [
+        sh:path otl:NumberOfRiser;
+        sh:minCount 1;
+        sh:minInclusive 20;
+    ]
+    .

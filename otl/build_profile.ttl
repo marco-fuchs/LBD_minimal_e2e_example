@@ -1,0 +1,31 @@
+
+PREFIX sh: <http://www.w3.org/ns/shacl#>
+PREFIX otl: <https://schema.example.ch/otl/>
+PREFIX otlb: <https://schema.example.ch/otl/base>
+PREFIX ex: <https://schema.example.ch/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+
+<https://schema.example.ch/profile/build/Stair> a sh:Nodeshape;
+    sh:targetClass otl:Stair;
+
+    ex:hasIfcClass "IfcStair";
+    ex:customClass "STRAIGHT_RUN_STAIR";
+
+    sh:property [
+        sh:path otl:IsExternal ;
+        sh:minCount 1;
+        sh:datatype xsd:boolean;
+    ], [
+        sh:path otl:NosingLength;
+        sh:minCount 1;
+        sh:in ("0.0"^^xsd:float "0.1"^^xsd:float "0.3"^^xsd:float);
+    ], [
+        sh:path otl:NumberOfRiser;
+        sh:minCount 1;
+        sh:minInclusive 20;
+    ] 
+    , [
+        sh:path otl:ups;
+        sh:minCount 1;
+    ]
+    .

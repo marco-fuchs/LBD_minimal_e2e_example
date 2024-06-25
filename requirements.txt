@@ -1,0 +1,5 @@
+pandas
+rdflib
+ifcopenshell
+pyshacl
+ifctester
