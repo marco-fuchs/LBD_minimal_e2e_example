@@ -6,6 +6,7 @@ Goal:
 - Validate the RDF data read from the IFC using the definition in the OTL with SHACL
 
 Uses Python with the package [IfcOpenShell](https://docs.ifcopenshell.org/ifcopenshell-python/hello_world.html).
+More Material: https://github.com/SSoLDAC2024
 
 Questions:
 - How can custom classes be adressed in IFC?
